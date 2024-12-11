@@ -1,8 +1,17 @@
 /* eslint-disable unicorn/prefer-string-raw */
 
-import { clerkMiddleware } from '@clerk/nextjs/server';
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 
-export default clerkMiddleware();
+const isPublicRoute = createRouteMatcher(['/sign-in(.*)', '/sign-up(.*)']);
+
+export default clerkMiddleware(
+  async (auth, request) => {
+    if (!isPublicRoute(request)) {
+      await auth.protect(); // For api requests, it will return a 404 error if the user is not authed
+    }
+  }
+  // , { debug: true }
+);
 
 export const config = {
   matcher: [
