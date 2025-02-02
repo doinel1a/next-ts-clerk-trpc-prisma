@@ -2,9 +2,9 @@ import React from 'react';
 
 import type { PropsWithChildren } from 'react';
 
-import ClerkProvider from './clerk';
-import ThemeProvider from './theme';
-import { TRPCProvider } from './trpc';
+import ThemeProvider from './client/theme';
+import { TRPCProvider } from './client/trpc';
+import ClerkProvider from './server/clerk';
 
 type TRootProvider = PropsWithChildren;
 
