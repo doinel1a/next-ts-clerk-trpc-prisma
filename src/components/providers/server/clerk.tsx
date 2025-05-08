@@ -6,6 +6,6 @@ import { ClerkProvider as NextJSClerkProvider } from '@clerk/nextjs';
 
 type TClerkProvider = PropsWithChildren;
 
-export default async function ClerkProvider({ children }: TClerkProvider) {
+export default async function ClerkProvider({ children }: Readonly<TClerkProvider>) {
   return <NextJSClerkProvider>{children}</NextJSClerkProvider>;
 }
