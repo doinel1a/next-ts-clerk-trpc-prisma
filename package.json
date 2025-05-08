@@ -31,6 +31,9 @@
     "db:migrate-status": "prisma migrate status",
     "db-danger:reset": "prisma migrate reset --force"
   },
+  "prisma": {
+    "schema": "./prisma"
+  },
   "dependencies": {
     "@clerk/nextjs": "6.19.1",
     "@prisma/client": "6.7.0",
