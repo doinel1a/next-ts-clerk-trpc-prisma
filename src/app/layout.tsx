@@ -40,7 +40,7 @@ export default function RootLayout({ children }: Readonly<TRootLayout>) {
 
           <GithubCorner
             title='Get started on GitHub'
-            url='https://github.com/doinel1a/next-ts-shadcn-ui'
+            url='https://github.com/doinel1a/next-ts-clerk-trpc-prisma'
           />
         </RootProvider>
       </body>
